@@ -12,7 +12,7 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{CLI for GitHub Flavored markdown to html conversion}
   gem.homepage      = "https://github.com/knomedia/hubdown"
   
-  gem.add_dependancy 'github/markdown'
+  gem.add_dependency 'github/markdown'
   gem.add_dependency 'mixlib-cli'
   gem.add_dependency 'paint'
 
