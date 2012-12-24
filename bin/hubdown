@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'github/markdown'
 
 file_name = ARGV[0]
 #output_file_name = ARGV[1] ||"#{file_name.split('.')[0]}.html"
