@@ -8,9 +8,13 @@ Gem::Specification.new do |gem|
   gem.version       = Hubdown::VERSION
   gem.authors       = ["jsk"]
   gem.email         = ["knomedia@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{CLI for GitHub Flavored markdown to html convervsion}
+  gem.summary       = %q{CLI for GitHub Flavored markdown to html conversion}
+  gem.homepage      = "https://github.com/knomedia/hubdown"
+  
+  gem.add_dependancy 'github/markdown'
+  gem.add_dependency 'mixlib-cli'
+  gem.add_dependency 'paint'
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
