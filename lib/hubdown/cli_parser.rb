@@ -9,10 +9,10 @@ class CliParser
     :long => "--output OUTPUT",
     :description => "Name of the file to write the converted markdown into"
 
-  option :preview,
-    :short => "-p",
-    :long => "--preview",
-    :description => "Displays the output markdown in a browser",
+  option :wrap,
+    :short => "-w",
+    :long => "--wrap",
+    :description => "Wrap the markdown in html and add styles",
     :boolean => true
 
 
