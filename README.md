@@ -15,8 +15,8 @@ $ gem install hubdown
 There are essentially 3 options when using `hubdown`.
 
  * Printing to STDOUT
- * Writing to a file
- * Previewing in browser
+ * Wrap in Github HTML
+ * Output to a file
 
 ***
 ### Printing to STDOUT
@@ -29,21 +29,21 @@ $ hubdown my_file.md
 
 Doing so will send converted markdown to standard output allowing you to pipe the file as you wish.
 ***
-### Writing to a file
+### Wrap in Github HTML
+
+```bash
+$ hubdown file.md -w
+```
+
+When passing the `-w` flag hubdown will render the markdown in an approximation of what Github provides and push it to STDOUT.
+***
+### Output to a file
 
 ```bash
 $ hubdown my_file.md -o my_file.html
 ```
 
-When passing the `-o` flag with a file name, hubdown will write the usual output (html) to the file you pass with `-o`.
-***
-### Previewing in browser
-
-```bash
-$ hubdown file.md -p
-```
-
-When passing the `-p` flag hubdown will pass the output (as though it generated a file) to your default web browser for previewing.
+When passing the `-o` flag with a file name, hubdown will write the full html output (as though you passed the `-w`) to the file you pass with `-o`.
 ***
 
 ## Contributing
