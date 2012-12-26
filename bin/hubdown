@@ -13,6 +13,7 @@ def init
   if parser.config[:output] 
     p.get_page
     # write to file
+    File.open( parser.config[:output], "w" ) { |f| f.write p.get_page } 
   elsif parser.config[:preview]
     p.get_page
     # push to bcat
