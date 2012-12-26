@@ -2,7 +2,6 @@
 require 'github/markdown'
 require 'hubdown/cli_parser'
 require 'hubdown/page_builder'
-require 'bcat'
 
 def init
   @file_name = ARGV.shift
