@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OUTPUT</title>
+  <% links.each do |link| %>
+  <%= link  %>
+  <% end %>
+  <style>
+    #wrapper {
+      width: 920px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+  <div id="slider">
+    <div class="frames">
+      <div class="frame">
+        <div id="readme" class="clearfix announce instapaper_body md">
+          <span class="name">FILE_NAME</span>
+          <article class="markdown-body entry-content">
+            <%= body %>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
