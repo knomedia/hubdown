@@ -15,7 +15,8 @@ module Hubdown
       links = @scraper.get_css_links
       body = @body
       filename = @filename
-      template = ERB.new( File.read("lib/hubdown/template.html.erb"), nil, "-" )
+      template_path = File.dirname(__FILE__) + "/template.html.erb"
+      template = ERB.new( File.read( template_path ), nil, "-" )
       page = template.result(binding)
       page      
     end
