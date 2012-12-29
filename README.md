@@ -35,7 +35,7 @@ Doing so will send converted markdown to standard output allowing you to pipe th
 $ hubdown file.md -w
 ```
 
-When passing the `-w` flag hubdown will render the markdown in an approximation of what Github provides and push it to STDOUT.
+When passing the `-w` flag hubdown will render the markdown in an approximation of what Github provides and push it to STDOUT. See Scraping for CSS below.
 ***
 ### Output to a file
 
@@ -43,7 +43,11 @@ When passing the `-w` flag hubdown will render the markdown in an approximation 
 $ hubdown my_file.md -o my_file.html
 ```
 
-When passing the `-o` flag with a file name, hubdown will write the full html output (as though you passed the `-w`) to the file you pass with `-o`.
+When passing the `-o` flag with a file name, hubdown will write the full html output (as though you passed the `-w`) to the file you pass with `-o`. See Scraping for CSS below.
+***
+### Scraping for CSS
+Note that when you use either the `-w` or `-o` flags, hubdown will use your network connection to scrap the currently used CSS from github.com.
+
 ***
 
 ## Contributing

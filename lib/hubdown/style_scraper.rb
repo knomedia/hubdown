@@ -5,7 +5,13 @@ class StyleScraper
 
   def initialize uri
     @uri = uri
-    @page = Nokogiri::HTML( open( @uri ) )
+    begin
+      @page = Nokogiri::HTML( open( @uri ) )
+    rescue
+      puts "It appears we are unable to connect to: #{@uri} for CSS scraping." 
+      puts "Please check your internet connection"
+      exit 0
+    end
   end
 
   def get_css_links
