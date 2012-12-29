@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OUTPUT</title>
-  <% links.each do |link| %>
-  <%= link  %>
-  <% end %>
+  <title><%= filename || ''%></title>
+  <% links.each do |link| -%>
+  <%= link -%>
+  <% end -%>
   <style>
     #wrapper {
       width: 920px;
@@ -18,9 +18,9 @@
     <div class="frames">
       <div class="frame">
         <div id="readme" class="clearfix announce instapaper_body md">
-          <span class="name">FILE_NAME</span>
+          <span class="name"><%= filename || ''%></span>
           <article class="markdown-body entry-content">
-            <%= body %>
+            <%= body -%>
           </article>
         </div>
       </div>
