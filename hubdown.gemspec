@@ -12,9 +12,9 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{CLI for GitHub Flavored markdown to html conversion}
   gem.homepage      = "https://github.com/knomedia/hubdown"
   
-  gem.add_dependency 'github-markdown'
-  gem.add_dependency 'mixlib-cli'
-  gem.add_dependency 'nokogiri'
+  gem.add_dependency('github-markdown', '>=0.5.3')
+  gem.add_dependency('mixlib-cli', '>=1.2.2')
+  gem.add_dependency('nokogiri', '>=1.5.6')
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
