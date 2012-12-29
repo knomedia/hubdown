@@ -4,15 +4,18 @@ require 'erb'
 module Hubdown
   class PageBuilder
     
-    def initialize body
-      @body = body
-      @scraper = StyleScraper.new( 'https://github.com/knomedia/hubdown' )
+    def initialize args
+      @body = args.fetch("body"){ '' }
+      @uri = args.fetch("uri"){ 'https://github.com/knomedia/hubdown' }
+      @filename = args.fetch("filename"){ '' }
+      @scraper = StyleScraper.new( @uri )
     end
 
     def get_page
       links = @scraper.get_css_links
       body = @body
-      template = ERB.new( File.read "lib/hubdown/template.html.erb" )
+      filename = @filename
+      template = ERB.new( File.read("lib/hubdown/template.html.erb"), nil, "-" )
       page = template.result(binding)
       page      
     end
