@@ -1,4 +1,4 @@
-require 'hubdown/style_scraper'
+require 'hubdown/style_generator'
 require 'erb'
 
 module Hubdown
@@ -8,11 +8,11 @@ module Hubdown
       @body = args.fetch("body"){ '' }
       @uri = args.fetch("uri"){ 'https://github.com/knomedia/hubdown' }
       @filename = args.fetch("filename"){ '' }
-      @scraper = StyleScraper.new( @uri )
+      @style_gen = StyleGenerator.new( @uri )
     end
 
     def get_page
-      links = @scraper.get_css_links
+      links = @style_gen.get_css_links
       body = @body
       filename = @filename
       template_path = File.dirname(__FILE__) + "/template.html.erb"
