@@ -3,7 +3,7 @@
 <head>
   <title><%= filename || ''%></title>
   <% links.each do |link| -%>
-  <%= link -%>
+  <%= link.to_tag -%>
   <% end -%>
   <style>
     #wrapper {
