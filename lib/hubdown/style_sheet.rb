@@ -7,9 +7,11 @@ class StyleSheet
 
 
   def from_tag tag
-    matcher = /href=['|"](([\w:.\/])*)\/(\w+.css)/.match( tag )
-    @url = matcher.captures[0]
-    @name = matcher.captures[2]
+    matcher = /href=['|"](([\w:.\/])*)\/([\w|-]+.css)/.match( tag.to_s )
+    if matcher
+      @url = matcher.captures[0]
+      @name = matcher.captures[2]
+    end
   end
 
   def to_tag
