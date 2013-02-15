@@ -1,6 +1,5 @@
 require 'hubdown/style_scraper'
 require 'hubdown/style_cache'
-require 'pry'
 
 class StyleGenerator
   def initialize uri
