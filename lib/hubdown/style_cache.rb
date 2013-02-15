@@ -1,6 +1,5 @@
 require 'hubdown/style_sheet'
 require 'fileutils'
-require 'pry'
 
 class StyleCache
   attr_accessor :style_data
@@ -68,10 +67,18 @@ class StyleCache
       ss = StyleSheet.new
       ss.name = contents[0]
       ss.url = contents[1]
-
+      ss.url = "file://" + (get_cache_file(''))
+      ss.content = get_style_content ss.name
       cached_links << ss
     end
     cached_links
+  end
+
+  def get_style_content filename
+    file = get_cache_file filename
+    contents = ""
+    File.open( file, 'r' ) {|f| contents = f.read() }
+    contents
   end
  
 
