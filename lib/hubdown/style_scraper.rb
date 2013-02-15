@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'hubdown/style_sheet'
 
 class StyleScraper
 
@@ -8,15 +9,20 @@ class StyleScraper
     begin
       @page = Nokogiri::HTML( open( @uri ) )
     rescue
-      puts "It appears we are unable to connect to: #{@uri} for CSS scraping." 
-      puts "Please check your internet connection"
-      exit 0
+      # do nothing
     end
   end
 
   def get_css_links
     links = []
-    links = @page.css("link").select{ |link| link['rel'] == 'stylesheet' }
+    if @page
+      tag_links = @page.css("link").select{ |link| link['rel'] == 'stylesheet' }
+      tag_links.each do |tag|
+        ss = StyleSheet.new
+        ss.from_tag(tag.to_s)
+        links << ss
+      end
+    end
     links
   end
 
