@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency('mixlib-cli', '>=1.2.2')
   gem.add_dependency('nokogiri', '>=1.5.6')
 
+  gem.add_development_dependency 'pry'
   gem.add_development_dependency "rspec", ">= 2.0.0"
 
   gem.files         = `git ls-files`.split($/)
