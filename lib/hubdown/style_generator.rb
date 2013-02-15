@@ -29,7 +29,7 @@ class StyleGenerator
       else
         @cache.save_links live_links
       end
-      @links = cached_links
+      @links = @cache.get_css_links
     end
   end
 
