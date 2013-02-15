@@ -46,7 +46,7 @@ $ hubdown my_file.md -o my_file.html
 When passing the `-o` flag with a file name, hubdown will write the full html output (as though you passed the `-w`) to the file you pass with `-o`. See Scraping for CSS below.
 ***
 ### Scraping for CSS
-Note that when you use either the `-w` or `-o` flags, hubdown will use your network connection to scrap the currently used CSS from github.com.
+Note that when you use either the `-w` or `-o` flags, hubdown will use your network connection to scrap the currently used CSS from github.com. It will do it's best to cache that the results of that network call for future non-connected uses.
 
 ***
 
