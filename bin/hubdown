@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
-require 'github/markdown'
+require 'redcarpet'
 require 'hubdown/cli_parser'
 require 'hubdown/page_builder'
+require 'hubdown/pygments_renderer'
 
 def init
   @file_name = ARGV.shift
@@ -41,7 +42,21 @@ end
 
 
 def create_mdown
-  md = GitHub::Markdown.render_gfm File.read(@file_name)
+  md_options = { :autolink => true,
+                 :no_intra_emphasis => true,
+                 :space_after_headers => true,
+                 :fenced_code_blocks => true,
+                 :tables => true,
+                 :strikethrough => true,
+                 :lax_spacing => true,
+                 :space_after_headers => true,
+                 :superscript => true
+               }
+  renderer = PygmentsRenderer.new({ :hard_wrap => true })
+  markdown = Redcarpet::Markdown.new(renderer, md_options) 
+  contents = ""
+  File.open( @file_name, 'r') {|f| contents = f.read() }
+  md = markdown.render( contents )
   md
 end
 
