@@ -1,0 +1,16 @@
+# hubdown changelog
+
+## V 0.0.10
+
+### Add syntax highlighting
+Switch away from using the `github-markdown` gem. Instead it now uses [`redcarpet`](https://github.com/vmg/redcarpet) and [`pygments.rb`](https://github.com/tmm1/pygments.rb). This adds fenced code syntax highlighting for most langauges that github currently supports (maybe all of them).
+
+
+## V 0.0.9
+
+### Stylesheet caching
+Now caches the scraped css that it pulls from github. This allows you to continue working with hubdown even when offline.
+
+### Removes erroneous `pry` dependency
+
+
