@@ -22,7 +22,7 @@ class StyleCache
     create_tmp_file
     write_link_cache_file links
     write_link_contents links
-    remove_old_files
+    remove_old_files links
 
   end
 
@@ -47,8 +47,11 @@ class StyleCache
     end
   end
 
-  def remove_old_files
+  def remove_old_files links
     prev_sheets = load_latest_files
+    prev_sheets.delete_if do |link|
+      links.index {|item| item.name == link.name}
+    end
     prev_sheets.each do |sheet|
       FileUtils.rm(get_cache_file( sheet.name ))
     end
