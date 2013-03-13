@@ -1,6 +1,7 @@
 # hubdown changelog
 
 ## V 0.0.11
+Support for multibyte chars in the template (Thx to @kitak!)
 Fix bug where needed cached files could potentially be deleted
 
 ## V 0.0.10
