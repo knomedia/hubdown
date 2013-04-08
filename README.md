@@ -1,5 +1,7 @@
 # Hubdown
 
+[![Gem Version](https://badge.fury.io/rb/hubdown.png)](http://badge.fury.io/rb/hubdown)
+
 Hubdown is a ruby CLI for use as a replacement for `markdown`. It supports [GitHub flavored markdown](http://github.github.com/github-flavored-markdown/) syntax, and can style it's output to closely approximate that of GitHub as seen in project README.md files.
 
 ## Installation
