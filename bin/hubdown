@@ -52,7 +52,7 @@ def create_mdown
                  :space_after_headers => true,
                  :superscript => true
                }
-  renderer = PygmentsRenderer.new({ :hard_wrap => true })
+  renderer = PygmentsRenderer.new({ :hard_wrap => false })
   markdown = Redcarpet::Markdown.new(renderer, md_options) 
   contents = ""
   File.open( @file_name, 'r') {|f| contents = f.read() }
