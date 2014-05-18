@@ -12,10 +12,10 @@ describe StyleSheet do
 
   it "strips attributes from a given tag" do
     sh = StyleSheet.new
-    sh.from_tag "<link href=\"https://a248.e.akamai.net/assets.github.com/assets/github-6c7984e384129edf1958345326c26471eedcdc23.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\">\n"
+    sh.from_tag "<link href=\"https://assets-cdn.github.com/assets/github-da7475c114a3c2eab7b91a0584202a89fd188935.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\">"
 
-    sh.name.should eq "github-6c7984e384129edf1958345326c26471eedcdc23.css"
-    sh.url.should eq "https://a248.e.akamai.net/assets.github.com/assets"
+    sh.name.should eq "github-da7475c114a3c2eab7b91a0584202a89fd188935.css"
+    sh.url.should eq "https://assets-cdn.github.com/assets"
   end
 
   it "loads web content" do
