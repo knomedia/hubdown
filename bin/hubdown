@@ -44,7 +44,6 @@ end
 def create_mdown
   md_options = { :autolink => true,
                  :no_intra_emphasis => true,
-                 :space_after_headers => true,
                  :fenced_code_blocks => true,
                  :tables => true,
                  :strikethrough => true,
