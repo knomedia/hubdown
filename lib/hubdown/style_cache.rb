@@ -10,7 +10,6 @@ class StyleCache
     @latest_file = File.join(File.dirname(File.expand_path(__FILE__)), "cache/latest_styles.txt")
   end
 
-
   def get_css_links
     load_latest_files
   end
@@ -23,7 +22,6 @@ class StyleCache
     write_link_cache_file links
     write_link_contents links
     remove_old_files links
-
   end
 
   def create_tmp_file
@@ -62,7 +60,7 @@ class StyleCache
   def get_cache_file name
     File.join(File.dirname(File.expand_path(__FILE__)), "cache/#{name}")
   end
-    
+
   def load_latest_files
     cached_links = []
     File.readlines( @latest_file ).each do |line|
@@ -83,8 +81,5 @@ class StyleCache
     File.open( file, 'r' ) {|f| contents = f.read() }
     contents
   end
- 
-
-
 
 end

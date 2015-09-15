@@ -8,7 +8,6 @@ class StyleGenerator
     @cache = StyleCache.new
 
     determine_css
-
   end
 
   def determine_css
@@ -36,24 +35,24 @@ class StyleGenerator
     same = true
     same = cached.length == live.length;
     if same
-     cached.each do |cache_link|
-      live.each do |live_link|
-        same = cache_link.name == live_link.name
-        break unless !same
+      cached.each do |cache_link|
+        live.each do |live_link|
+          same = cache_link.name == live_link.name
+          break unless !same
+        end
       end
-     end 
     end
     same
   end
-  
+
   def notify_error
     puts "It appears we are unable to connect to: #{@uri} for CSS scraping." 
     puts "There is no cached version of the styles available"
     puts "Please check your internet connection, or drop the -w param"
-    exit 0
+    exit 1
   end
 
   def get_css_links
-   @links 
+   @links
   end
 end

@@ -4,7 +4,7 @@ require 'erb'
 
 module Hubdown
   class PageBuilder
-    
+
     def initialize args
       @body = args.fetch("body"){ '' }
       @uri = args.fetch("uri"){ 'https://github.com/knomedia/hubdown' }
@@ -19,7 +19,7 @@ module Hubdown
       template_path = File.dirname(__FILE__) + "/template.html.erb"
       template = ERB.new( File.read( template_path ), nil, "-" )
       page = template.result(binding)
-      page      
+      page
     end
   end
 end

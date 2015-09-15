@@ -30,11 +30,11 @@ def init
 end
 
 def create_page mdown
-  options = { 
-    "body" => mdown, 
-    "filename" => @file_name, 
+  options = {
+    "body" => mdown,
+    "filename" => @file_name,
     "uri" => 'https://github.com/knomedia/hubdown'
-  } 
+  }
   p = Hubdown::PageBuilder.new options
   page_data = p.get_page
   page_data
@@ -60,4 +60,3 @@ def create_mdown
 end
 
 init
-
