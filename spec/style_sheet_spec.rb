@@ -20,9 +20,9 @@ describe StyleSheet do
 
   it "loads web content" do
     sh = StyleSheet.new
-    sh.from_tag '<link href="http://dev.knomedia.com/hubdown_css/test.css" media="screen" rel="stylesheet" type="text/css">'
+    sh.from_tag '<link href="https://pa.jskdev.xyz/test.css" media="screen" rel="stylesheet" type="text/css">'
     sh.download_content
-    sh.content.should eq "body { margin: 0; }"
+    sh.content.should eq "body { margin: 0; }\n"
   end
 
 end

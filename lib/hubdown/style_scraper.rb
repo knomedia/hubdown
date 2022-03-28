@@ -7,7 +7,7 @@ class StyleScraper
   def initialize uri
     @uri = uri
     begin
-      @page = Nokogiri::HTML( open( @uri ) )
+      @page = Nokogiri::HTML( URI.open( @uri ) )
     rescue
       # do nothing
     end

@@ -20,7 +20,7 @@ class StyleSheet
   end
 
   def download_content
-    @content ||= open("#{@url}/#{name}").read
+    @content ||= URI.open("#{@url}/#{name}").read
   end
 
 end
